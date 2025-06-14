@@ -1,0 +1,54 @@
+IF (Instruction Fetch)	Stage where instruction is read from memory into CPU
+ID (Instruction Decode)	Stage where instruction is decoded and registers are read
+EX (Execute)	Stage where ALU performs operation (e.g. add, branch decision)
+MEM (Memory Access)	Stage where memory is read or written (load/store)
+WB (Write Back)	Stage where result is written back to register file
+ALU	Arithmetic Logic Unit – does math and logic ops
+PC (Program Counter)	Address of the next instruction to execute
+Register File	Set of fast-access registers inside CPU
+Hazard	A condition that prevents next instruction from executing safely
+Data Hazard	Instruction depends on result of previous one still in pipeline
+Control Hazard	Caused by branches – not knowing which instruction to fetch next
+Structural Hazard	Two instructions need the same hardware at the same time
+Forwarding	Passing result directly to next stage to avoid data hazard
+Stalling	Pausing pipeline to wait for data or hardware
+Flushing	Discarding instructions in pipeline (e.g. after branch mispredict)
+Superscalar	Executes multiple instructions per cycle
+Out-of-Order Execution	Executes instructions in different order to avoid stalls
+In-Order Execution	Executes instructions in original program order
+Branch Predictor	Predicts the outcome of a branch before it’s resolved
+BTB (Branch Target Buffer)	Remembers where recent branches jumped to
+RAS (Return Address Stack)	Remembers return addresses for function calls
+TAGE	Advanced branch predictor using multiple history lengths
+Cache	Small, fast memory close to CPU storing recent data
+L1 / L2 / L3 Cache	Levels of cache: L1 is fastest & smallest, L3 is largest
+Cache Hit	Requested data is in cache
+Cache Miss	Requested data is not in cache, must fetch from lower level
+Hit Rate	Percentage of memory requests that hit cache
+Associativity	How many places a block can be stored in cache
+Direct-Mapped Cache	Each memory block maps to one location
+Set-Associative Cache	Block can go into multiple slots within a set
+Write-Through Cache	Writes go to both cache and memory immediately
+Write-Back Cache	Writes only update cache and write to memory later
+Replacement Policy	Rule to decide which cache line to evict (LRU, FIFO)
+TLB (Translation Lookaside Buffer)	Cache for recent virtual-to-physical address mappings
+Virtual Memory	Abstraction of memory; lets programs use more than RAM
+Page Table	Maps virtual addresses to physical addresses
+Memory-Mapped I/O	Treats device registers as memory locations
+Load-Store Architecture	Only load/store instructions access memory (like ARM/RISC-V)
+ISA (Instruction Set Architecture)	Defines the instructions the CPU can execute
+RISC (Reduced Instruction Set Computer)	Simple instructions, one per cycle (e.g. ARM, RISC-V)
+CISC (Complex Instruction Set Computer)	Complex instructions (e.g. x86)
+Opcode	Operation code – identifies the instruction type
+Operand	Input for the instruction (e.g. register or immediate)
+Micro-op	Internal simplified instruction derived from macro-instruction
+Pipeline Register	Registers between pipeline stages, holding intermediate data
+Assembly	Human-readable form of machine instructions
+RTL (Register Transfer Level)	Hardware description level modeling data movement between registers
+Verilog	Language to design hardware circuits (HDL)
+ModelSim	Tool to simulate Verilog code
+gem5	CPU simulator for architecture research
+QEMU	Lightweight emulator for running instruction traces
+Trace File	Log of executed instructions (e.g. PC, branch taken, etc.)
+Functional Simulator	Only checks correctness (e.g. QEMU)
+Performance Simulator	Models actual cycles and stalls (e.g. gem5)
