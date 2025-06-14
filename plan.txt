@@ -1,0 +1,17 @@
+Masterplan 
+
+
+1. Be a chip Acrhitect that doesn't bottleneck the team
+2. Be a better chip Acrhitect that deliver fasts
+3. Use that foundation, be a even better chip Acrhitect 
+while doing that, build cpp via hands on 
+
+
+1 Be a chip Acrhitect that doesn't bottleneck
+-- Build solid foundation for later
+1.1 Terminology, Landscape of chip
+1.2 Foundation of CPU
+1.3 Hands on pratice for foundation knowledge
+
+2 Be a better chip Acrhitect  
+-- Can work given instruction
