@@ -9,20 +9,35 @@ while doing that, build cpp via hands on
 
 1 Be a chip Acrhitect that doesn't bottleneck
 -- Build solid foundation for later
-    1.1 Terminology, Landscape of chip
-    1.2 Foundation of CPU
-    1.3 Hands on pratice for foundation knowledge
 
-    1.1
-    a Simulate a CPU pipeline on paper (or spreadsheet).
-    output : cpu.csv
-    b Cache simulator 
-    output : cache_sim.cpp
-    c. gem5 
-    - tutorial
-    output : unknown format yet
-    d. ALU via Verilog ;
-    output : alu.v + testcase
+1.1 Terminology, Landscape of chip
+
+terminology 
+ terminology flashcard v1 
+ terminology flashcard v2 
+
+landscape
+ chipwar book v
+ outline of cpu industry
+
+1.2 Foundation of CPU
+
+CPU Wiki 1st read 
+output 
+
+
+1.3 Hands on pratice for foundation knowledge
+
+a Simulate a CPU pipeline on paper (or spreadsheet).
+output : cpu.csv
+b Cache simulator 
+output : cache_sim.cpp
+c. gem5 
+- tutorial
+output : unknown format yet
+d. ALU via Verilog ;
+output : alu.v + testcase
+
 
 
 
