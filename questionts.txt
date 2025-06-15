@@ -1,0 +1,9 @@
+What is :
+1   I1, 2,3 etc -- stand for instruction 1,2,3, each I is instruction.
+    Used these labels to track instruction movement in pipeline cycles.
+
+2   pipeline's role in cpu -- central or side
+    Central engine of CPU -- cpu is instruction processor,
+    every instruction goes through pipeline. cpu's efficency 
+    is determined by pipeline. alu, or registers, all made 
+    around pipeline.

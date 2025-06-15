@@ -1,0 +1,31 @@
+
+
+cpu
+-instruction execute 
+    core : fetch decode execute 
+    - how
+    fetch
+        pc
+        Instruction memory 
+        process 
+            os ->  Instruction memory -> control unit 
+    decode
+        control unit (decode)
+        isa 
+        register file
+        process 
+           control unit *reads isa, *reads register file
+    execute
+        alu
+
+    
+    challenge : repeat loop as fast as possible
+    - optimzations 
+    parallelism/pipeline
+    
+
+
+
+
+
+    challenge : loop it lots of time

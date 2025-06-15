@@ -7,7 +7,7 @@ Masterplan
 while doing that, build cpp via hands on 
 
 
-1 Be a chip Acrhitect that doesn't bottleneck
+1 Be a chip Acrhitect that doesn't bottleneck ; Before 1st July
 -- Build solid foundation for later
 - Read through books to get a sense
 - Know the excat terminology / definitions for easier learning later
@@ -15,7 +15,7 @@ while doing that, build cpp via hands on
 
 1.1 Terminology, Landscape of chip
 
- terminology flashcard v1 (50)
+ terminology flashcard v1 (50)  
  terminology flashcard v2 
  chipwar book v
  outline of cpu industry
@@ -35,7 +35,5 @@ d. ALU via Verilog ;
 output : alu.v + testcase
 
 
-
-
-2 Be a better chip Acrhitect  
+2 Be a better chip Acrhitect ; Before 2nd July
 -- Can work given instruction, deliver on time

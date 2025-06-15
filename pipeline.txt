@@ -1,0 +1,20 @@
+Manually simulate a 5-stage pipeline with hazards, stalls, and forwarding. 
+To understand timing and instruction dependencies.
+
+1st -- simplest loop
+- simulate fetch, decode, execute
+- calculator to do 1+1 in mac
+- action (press 1) -> (press +) -> (press 1) 
+    -> (press =) -> ( *calculates ) -> (*displays) = 6 instruction
+    
+Cycle 
+1   I1  I2  I3
+2   IF
+3   ID
+4   EX
+5       IF
+6       ID
+7       EX
+8           ...
+
+
