@@ -1,12 +1,12 @@
-Manually simulate a 5-stage pipeline with hazards, stalls, and forwarding. 
+Manually simulate a RISC 5-stage pipeline with 
+1 hazards, 2 stalls, and 3 forwarding. 
 To understand timing and instruction dependencies.
 
 1st -- simplest loop
 - simulate fetch, decode, execute
 - calculator to do 1+1 in mac
-- action (press 1) -> (press +) -> (press 1) 
-    -> (press =) -> ( *calculates ) -> (*displays) = 6 instruction
-    
+
+1+1 : 
 Cycle 
 1   I1  I2  I3
 2   IF
@@ -17,4 +17,66 @@ Cycle
 7       EX
 8           ...
 
+Cycle 
+Instruction memory reads at  PC = 0 :
+    reads : opcode = 0110011 (reads binary)
+    loaded into fetch buffer (tempory hold fetched instruction between stages)
 
+Control Unit decode 
+     opcode(0110011) = ADD x3, x1, x2;
+     
+     Control Unit - > Arithemtic -> ALU control unit 
+     Select ADD Operation -> send Add to ALU
+
+     RegisterFile Reads x1 = 1, x2 = 1. 
+     (from registers, a memory device inside cpu, input by perv instruction or when program setup)
+     send control singals to ALU (1,1) operand
+     
+Execute
+    ALU : 1+1 = 2 ; 
+    PC + 4 = 4 (RISC-V ins is 4 bytes wide, next instruction always + 4 01,10,01,1)
+WriteBack 
+    Register x3 = 2;
+
+
+2nd loop -- 
+CC ->   1   2   3   4   5   6   7   8   9   10
+No.
+1       IF  ID  EX  MEM WB
+2           IF  ID  EX  MEM WB
+3               IF  ID  EX  MEM WB
+4                   IF  ID  EX  MEM WB
+
+Hazard 
+x1= 1, x2=1, x3=1
+add x1 to x2  
+add x2 to x3
+CC ->   1   2   3   4   5   6   7   8   9   10
+No.
+1       IF  ID  EX  MEM WB
+2           IF  ID  EX  MEM WB
+
+x3 = 1+1 as used old value of x2
+
+
+Stall 
+add x1 to x2 
+add x2 to x3
+CC ->   1   2   3   4   5   6   7   8   9   10
+No.
+1       IF  ID  EX  MEM WB
+2           IF  O   O   O  EX  MEM WB
+
+O = bubble, Processor cannot decode instruction as it depends on the execution of x2.
+
+foward 
+add x1 to x2 
+add x2 to x3
+CC ->   1   2   3   4   5   6   7   8   9   10
+No.
+1       IF  ID  EX  MEM WB
+2           IF  ID  EX  MEM WB
+
+While I1 write result, I2 read operands and use result from I1 instead of waiting.
+In output of decode stage I2, reads either register pipeline of ALU or MEM.
+- Execute simple instruction with latency with ALu only not stall

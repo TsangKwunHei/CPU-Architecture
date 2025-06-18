@@ -24,8 +24,8 @@ while doing that, build cpp via hands on
 
 1.3 Hands on pratice for foundation knowledge
 
-a Simulate a CPU pipeline on paper (or spreadsheet).
-output : cpu.csv
+a Simulate a CPU pipeline by hand
+output : pipeline.txt
 b Cache simulator 
 output : cache_sim.cpp
 c. gem5 

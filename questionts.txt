@@ -7,3 +7,50 @@ What is :
     every instruction goes through pipeline. cpu's efficency 
     is determined by pipeline. alu, or registers, all made 
     around pipeline.
+
+3.  what's more fundemental than pipeline ---  
+    the core most simplest part of cpu.
+    A : instruction execution loop is essence of all CPUs, 
+    modern CPUs is about smarter ways to make use of fetch, decode, execute. 
+    Either improving this loop or building more loops like parallelism. 
+    Core loop -- Fetch, decode, execute.
+    1 Fetch instruction from memory via program counter 
+    2 Decode Based on instruction set 
+    3 Execute instruction intention
+
+    Pipeline is simply a overlap to make use of spaces.
+
+4.  is the loop a result of compoents working tog or no?
+    A: fetch decode execute loop is result of control unit, 
+    Program counter, instruction memory, register file, ALU working together. 
+    Control unit is the brain.  
+
+5   In loop, what's role of each component
+    Fetch
+    1 Control unit tells instruction memory to fetch
+    2 PC *Gives address to instruction memory to control unit
+    decodes
+    3 control unit decodes based on Instruction set -> what to do
+    4 Register File supplies specific values for operation -> parameters
+    Executes
+    5 CU got values, tells ALU to execute intention with parameters
+    6 CU updates PC
+
+6 what does decode looks like -- how do operand and action combined into actual execution
+Control unit decodes opcode into funct3 and funct7
+oppcode(00100010 etc) -> instruction (ADD, x3, x1,x3 etc) -> funct3 func7
+funct3 -> operation, funct7 ->registers
+
+7 one block cycle vs one stage
+stages like decode, in pipeline, multi stages happen per cycle.
+8 data flow of fetch decode execute
+
+9 whats MEM for 
+loading operands
+
+10 in RISC, whats criteria/situation of choosing take as next PC or to take the result of a branch/jump calculation
+Without branches or jumps, CPU executes instruction linearly. There will be no if statement or function calls in program. Branch stands for conditional if statement in code. The program face multiple conditions and decide which ones to run next. In other words, a conditional redirection. Jump is like a function call. When encounter unconditionally goes to another part of a code. In other words, unconditional redirection.
+branch : if,else,while; jump goto,return etc
+
+11 when excatly is branch prediction used in risc
+Branch prediction, activate in instruction fetch before decode stage to avoid stalling. To fetch the next instruction early. In other words, it is literally guessing if or while logic in your C++ code.
