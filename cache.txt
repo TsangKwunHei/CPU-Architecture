@@ -1,3 +1,4 @@
+#cache
 Cache in a CPU serves to provide the fastest access possible. 
 It generally comprises three levels: L1, L2, and L3.
 L1 is the fastest among them. 
@@ -11,3 +12,7 @@ A cache entry is created within the cache when a cache line is copied from memor
 A cache entry also includes a memory location called a tag. 
 In other words, each cache includes multiple cache lines. 
 Cache lines hold cache entries, which include copied data as well as the original memory location as a tag.
+
+#replacement
+Cache has limited space, so sometimes it has to remove old entries to make room for new ones. The selection criteria for which to remove is called the replacement policy. It's trying to guess which existing cache entry is least likely to be used in the future. The most popular policy is least recently used, which replaces the least recently accessed cache entry. It's like packing a room; you throw away the stuff you haven't used recently. If it hasn't been used within 3 months, assume you won't use it for the next 3 months and throw it away. In this metaphor, it's like you have a very small room. Your room has a lot of boxes, and whenever it's full and you want to bring in new useful stuff, you throw away some old stuff. By picking things you haven't used recently, for example, you might throw away some decorations, stoves in the summer, or that backpack you haven't used.
+The processor, before reading or writing a location in memory, always checks the corresponding entry in the cache. Does it have the memory location of the line that the processor wants? If yes, it is a cache hit; the processor found the memory location in the cache that it wants to read or write. If not, it's called a cache miss.
