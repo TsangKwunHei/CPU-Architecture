@@ -1,0 +1,13 @@
+Cache in a CPU serves to provide the fastest access possible. 
+It generally comprises three levels: L1, L2, and L3.
+L1 is the fastest among them. 
+Each core in a CPU has its own L1 cache, which can store frequently used data and is 100 times faster than random access memory. The L2 cache is shared by multiple cores in the CPU. An L3 cache is generally shared among all CPUs. The largest data in the cache is delivered by the control bus. The criteria for what data goes into the cache depend on architecture and algorithms for different selection criteria. 
+In each layer of cache, 
+there are two types: a data cache and an instruction cache. 
+A cache comprises cache entries or blocks of fixed size, 
+called cache lines or cache blocks. 
+They specify how much data each cache can hold. 
+A cache entry is created within the cache when a cache line is copied from memory to the cache. 
+A cache entry also includes a memory location called a tag. 
+In other words, each cache includes multiple cache lines. 
+Cache lines hold cache entries, which include copied data as well as the original memory location as a tag.

@@ -1,0 +1,1 @@
+1 diff between cpp and python in terms of compiler/cpu
