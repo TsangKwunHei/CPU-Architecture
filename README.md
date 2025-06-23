@@ -24,17 +24,19 @@ while doing that, build cpp via hands on
 
 1.3 Hands on pratice for foundation knowledge
 
-a Simulate a CPU pipeline by hand
+a Simulate a CPU pipeline by hand 
 output : pipeline.txt [v]
+
 b Cache simulator 
 - simple logic direct map cahce, input access order, hit rate output
 - LRU
 output : cache_sim.cpp
 
 c. gem5 
-- run simple ARM program + 
+- run simple ARM program  
 - analysis of stages, cycles
-output :  
+output :  ?
+
 d. ALU via cpp ;
 - ADD, MINUS, AND, OR
 
