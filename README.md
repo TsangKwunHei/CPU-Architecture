@@ -35,11 +35,12 @@ c. gem5
 - run simple ARM program + 
 - analysis of stages, cycles
 output :  
-d. ALU via Verilog ;
+d. ALU via cpp ;
 - ADD, MINUS, AND, OR
 
 output : alu.v + testcase
 
 
-2 Be a better chip Acrhitect ; Before 2nd July
+2 Be a better chip Acrhitect  
 -- Can work given instruction, deliver on time
+Hands on working 
