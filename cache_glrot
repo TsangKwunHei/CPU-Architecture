@@ -2,3 +2,17 @@
 if in -> cache hit, else cache miss
 2 if cache miss -> draw from RAM and put in cache
 3 if cache full -> replace the one entry least frequently used.
+
+
+access_cache(int address)
+    bool hit
+    for(i =0; i=0) {
+        if (cache_entry.line.tag == address.tag)
+    }
+    if (hit) {
+        print(hit)
+        hit_count ++;
+    }
+    else {
+        print(miss)
+    }
