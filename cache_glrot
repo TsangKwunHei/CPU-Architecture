@@ -5,9 +5,6 @@ if in -> cache hit, else cache miss
 
 #include <iostream>
 
-array RAM {
-
-}
 access_cache(int address)
     bool hit
     for(i =0; i=0) {
