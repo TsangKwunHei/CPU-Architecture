@@ -1,1 +1,9 @@
 1 diff between cpp and python in terms of compiler/cpu
+
+2 cache format -- dataflow
+TAG --- DataBlock --- FlagBits
+
+3 what does memory look like before being fetched to cacheentry
+
+4 flag_bits is boolean ?
+

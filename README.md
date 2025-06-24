@@ -40,7 +40,7 @@ output :  ?
 d. ALU via cpp ;
 - ADD, MINUS, AND, OR
 
-output : alu.v + testcase
+output : alu.cpp + testcase
 
 
 2 Be a better chip Acrhitect  
