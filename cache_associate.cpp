@@ -7,13 +7,14 @@ struct cache_entry {
     int tag;
     int data;
     bool flagBits;
+    int freq;
 };
 
 struct cache_entry cache_blocks[] = {
-    {-1,0,false},
-    {-1,0,false},
-    {-1,0,false},
-    {-1,0,false},
+    {-1,0,false,0},
+    {-1,0,false,0},
+    {-1,0,false,0},
+    {-1,0,false,0},
 };
 
 int accessRAM(int address) {
@@ -21,10 +22,23 @@ int accessRAM(int address) {
 }
 const int CACHE_SIZE = sizeof(cache_blocks) / sizeof(cache_blocks[0]);
 
-void Direct_Map_cache(int address) {
+
+
+void associative(int address) {
     int data_fetch = accessRAM(address);
-    int index = address % CACHE_SIZE;
+    int lowest_freq = cache_blocks[0].freq;
+    int index = 0;
+    for (int i = 0; i < CACHE_SIZE; i++ ) {
+        if (cache_blocks[i].freq < lowest_freq) {
+            lowest_freq = cache_blocks[i].freq;
+            index = i;
+          
+        }
+   
+      
+    }
     cache_entry& cache_now = cache_blocks[index];
+    cache_now.freq = 1;
     cache_now.tag = address >> 6 ;//tag 26 bits, drop 6 bits via shift
     cache_now.data = data_fetch;
     cache_now.flagBits = true;
@@ -33,23 +47,28 @@ void Direct_Map_cache(int address) {
 
 void access_cache(int address) {
     bool hit = false;
-    //index
-    int index = address % CACHE_SIZE;
-    cache_entry& cache_now = cache_blocks[index];
+
     int address_tag = address >> 6 ;//tag 26 bits, drop 6 bits via shift
-        //if tag match
-    if (cache_now.tag == address_tag) {
-        if  (cache_now.flagBits == true) {
-            //hit 
-            std::cout << "hit" << "\n";
-            hit_count ++;
-            hit = true;
+
+    for (int i = 0; i < CACHE_SIZE; i++ ) {
+        //if tag matc
+        if (cache_blocks[i].tag == address_tag) {
+            if (cache_blocks[i].flagBits == true) {
+                //hit 
+                std::cout << "hit" << "\n";
+                hit_count ++;
+                hit = true;
+                cache_blocks[i].freq ++;
+                break;
+            }
         }
     }
+
     if (!hit) {
         std::cout << "miss" << "\n";
-        Direct_Map_cache(address);
+        associative(address);
     }
+    
 }
 
 int main() {
