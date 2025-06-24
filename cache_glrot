@@ -3,7 +3,11 @@ if in -> cache hit, else cache miss
 2 if cache miss -> draw from RAM and put in cache
 3 if cache full -> replace the one entry least frequently used.
 
+#include <iostream>
 
+array RAM {
+
+}
 access_cache(int address)
     bool hit
     for(i =0; i=0) {
@@ -15,4 +19,23 @@ access_cache(int address)
     }
     else {
         print(miss)
+        Direct_Map_cache(address);
     }
+
+Direct_Map_cache(address) {
+    accessRAM(address);
+    int index = 1;
+    cache_entry.line[index] = address;
+
+}
+
+
+int main() {
+    int RAM_address[5] = {1,2,3,4,5};
+    for (addresss in RAM_address) {
+        access_cache(address)
+    }
+
+    cout << "hitRate =" << hit_count/RAM_address.size *100 << "%" ; 
+
+}
