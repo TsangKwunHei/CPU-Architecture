@@ -30,7 +30,7 @@ output : pipeline.txt [v]
 b Cache simulator 
 - simple logic direct map cahce, input access order, hit rate output
 - LRU
-output : cache_sim.cpp
+output : cache_sim.cpp [v]
 
 c. gem5 
 - run simple ARM program  
@@ -42,6 +42,7 @@ d. ALU via cpp ;
 
 output : alu.cpp + testcase
 
+-- Before 2nd July
 
 2 Be a better chip Acrhitect  
 -- Can work given instruction, deliver on time
