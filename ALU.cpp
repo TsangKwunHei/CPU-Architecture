@@ -1,5 +1,12 @@
+
+/*
 - ADD, MINUS, AND, OR
-Input 
+
+1 Simple Input Output
+2 Turn binary
+
+*/
+
 
 int ALU(String Operand, int x1, int x2 )
     int x3;
@@ -13,3 +20,5 @@ int ALU(String Operand, int x1, int x2 )
         x3 = x2 - x1;  
 
     return x3;
+
+
